@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><!-- font awesome 5 free -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"><!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><!-- Poppins font from Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;600;900&amp;display=swap" rel="stylesheet"><!-- Your Custom CSS file that will include your blocks CSS -->
+  <link rel="stylesheet" href="./styles.css">
+  <title>$MUMU</title>
+   <link rel="icon" type="image/png" href="mumu-logo.png">
+</head>
+
+<body>
+  <audio loop id="mumutrack">
+    <source src="mumutrack.mp3" type="audio/mpeg">
+  </audio>
+  <!-- Put the blocks HTML here -->
+  <!------------------------------>
+  <!-- HERO ---------------->
+  <!------------------------------>
+  <header class="hero container-fluid">
+    <div class="hero__content container mx-auto">
+      <!-- I'm putting the nav inside this "fixed-nav-container" to fix some issues happens on scroll -->
+      <div class="fixed-nav-container">
+        <div style="display: flex; justify-content: flex-end; margin-top: 16px; align-items: center">
+          <button id="mumutrack-controller" onclick="toggleMumutrack()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+            </svg>
+          </button>
+          <span style="margin-left: 4px">Mumutrack</span>
+        </div>
+      </div>
+      <div class="hero__body">
+        <div class="row px-0 mx-0">
+          <div class="col-lg-6 px-0 mx-0">
+            <h1 class="hero__title mb-4">Mumu the bull. 
+            </h1>
+
+          <p class="hero__paragraph mb-5">Mumu is the destroyer of gay bobo bears. Larry fink sucks mumu's dick for a living. The lore states that mumu has a cock bigger than the BTC weekly candle.</p>
+          <p class="hero__paragraph mb-5">Mumu is quite literally the most interesting bull in the world. </p>
+            <div class="hero__btns-container"><a class="hero__btn btn btn-primary mb-2 mb-lg-0 mx-1 mx-lg-2" href="#!">Buy Now</a></div>
+          </div>
+          <div class="col-lg-6  mt-lg-0">
+            <div class="hero__img-container"><img class="hero__img w-100" src="mumu-logo.png"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script src="https://unpkg.com/tua-body-scroll-lock"></script>
+  <script>
+    let isPlayingMumutrack = false;
+
+    function toggleMumutrack() {
+      const audio = document.getElementById('mumutrack');
+      const button = document.getElementById('mumutrack-controller');
+      if (!isPlayingMumutrack) {
+        isPlayingMumutrack = true;
+        audio.play();
+        button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px;"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" /></svg>';
+      } else {
+        isPlayingMumutrack = false;
+        audio.pause();
+        button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px;"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" /></svg>'
+      }
+    }
+
+    var showDropdown = function(e) {
+        e.currentTarget.classList.add("hero-nav__item--show-dropdown")
+      },
+      hideDropdown = function(e) {
+        e.currentTarget.classList.remove("hero-nav__item--show-dropdown")
+      },
+      toggleDropdown = function(e) {
+        e.currentTarget.classList.toggle("hero-nav__item--show-dropdown")
+      };
+
+    function setupDropdowns(n) {
+      document.querySelectorAll(".hero-nav__item--with-dropdown").forEach(function(e) {
+        var o, t;
+        n.matches ? ((o = e.classList).contains("hero-nav__item--dropdown-left") && o.contains("hero-nav__item--dropdown-right") || (t = e.getBoundingClientRect().width, e.querySelector(".dropdown").style.transform = "translateX(calc(-50% + " + t / 2 + "px))"), e.addEventListener("mouseenter", showDropdown), e.addEventListener("mouseleave", hideDropdown), e.querySelector(".hero-nav__link").removeEventListener("click", toggleDropdown)) : (e.removeEventListener("mouseenter", showDropdown), e.removeEventListener("mouseleave", hideDropdown), e.querySelector(".dropdown").style.transform = "", e.addEventListener("click", toggleDropdown))
+      })
+    }
+    var mediaQuery = window.matchMedia("(min-width: 992px)");
+    setupDropdowns(mediaQuery), mediaQuery.addListener(function(e) {
+      var o;
+      setupDropdowns(e), e.matches && ((o = document.querySelector("#hero-menu")).style.height = "", bodyScrollLock.unlock(o))
+    });
+    var heroMenu = document.querySelector("#hero-menu");
+
+    function closeMenuAndGoTo(o) {
+      document.querySelector("#hero-menu").classList.toggle("ft-menu--js-show");
+      var e = document.querySelector("#hero-menu");
+      if (e.style.height = "", bodyScrollLock.unlock(e), "#" === o || !document.querySelector(o)) return !1;
+      setTimeout(function() {
+        var e = document.querySelector(o);
+        window.scrollTo({
+          top: e.getBoundingClientRect().top,
+          behavior: "smooth"
+        })
+      }, 250)
+    }
+    document.querySelector("[close-nav-menu]").onclick = function(e) {
+      heroMenu.classList.toggle("ft-menu--js-show"), bodyScrollLock.unlock(heroMenu)
+    }, document.querySelector("[open-nav-menu]").onclick = function(e) {
+      heroMenu.classList.toggle("ft-menu--js-show"), heroMenu.style.height = window.innerHeight + "px", bodyScrollLock.lock(heroMenu)
+    }, document.querySelector("#hero-menu").querySelectorAll("[href*='#']").forEach(function(o) {
+      o.onclick = function(e) {
+        e.preventDefault(), closeMenuAndGoTo(o.getAttribute("href"))
+      }
+    });
+    var nav = document.querySelector(".hero-nav");
+    window.onscroll = function(e) {
+      var o = document.querySelector("[change-src-onscroll]");
+      window.scrollY > nav.getBoundingClientRect().height ? (nav.classList.contains("hero-nav--is-sticky") || (window.logoSrc = o.getAttribute("src"), o.setAttribute("src", o.getAttribute("change-src-onscroll")), o.setAttribute("change-src-onscroll", logoSrc)), nav.classList.add("hero-nav--is-sticky")) : 0 === window.scrollY && (nav.classList.contains("hero-nav--is-sticky") && (window.logoSrc = o.getAttribute("src"), o.setAttribute("src", o.getAttribute("change-src-onscroll")), o.setAttribute("change-src-onscroll", logoSrc)), nav.classList.remove("hero-nav--is-sticky"))
+    };
+    var languageDropdown = document.querySelector("[javascript-language-selector]");
+    languageDropdown.onclick = function(e) {
+      e.target.classList.contains("dropdown__link") && (languageDropdown.querySelector(".dropdown__link--selected").classList.remove("dropdown__link--selected"), e.target.classList.add("dropdown__link--selected"), document.querySelector(".language-image").setAttribute("src", e.target.querySelector("img").getAttribute("src")))
+    }
+  </script>
+  <!------------------------------>
+  <!-- RIGHT FEATURE ---------------->
+  <!------------------------------>
+  <div class="block-8-scr space-between-blocks" style="background: #00FF00">
+    <div class="container position-relative">
+      <div class="row px-2 align-items-center flex-column-reverse flex-lg-row">
+        <!-- CONTENT -->
+        <div class="block__header col-lg-8 col-xl-7 mx-auto px-0">
+          <h1 class="block__paragraph ">In the annals of financial lore, there exists a legendary figure known as <span class="block__title">Mumu</span>, revered as the indomitable guardian of the fabled Bull Market. <span class="block__title">Mumu</span>, the majestic bull, perpetually embarks on a heroic struggle against the relentless forces of the bears and other iconic embodiments of market whimsy, including the (and gayest bear) <span class="block__paragraph">Bobo</span>. </h1>
+  <h1 class="block__paragraph "> Their ceaseless clash shapes the very essence of market sentiment and dictates the course of destiny itself. In the hallowed year of 2021, <span class="block__title">Mumu</span> reigned supreme, wielding unparalleled dominance over the markets with unyielding authority. Now, as the vernal winds herald the dawn of Spring in 2024, <span class="block__title">Mumu</span> strides forth once more from the mists of legend, ready to reclaim his mantle of power and steer the course of financial fate.</h1>
+
+        </div>
+        <div class="col-lg-6 position-relative mt-4 mt-lg-0">
+          <h1 class="block__title mb-3">Welcome. If you're here you might just make it. </h1>
+          <p class="block__paragraph block__paragraph--big mb-5">Mumu is the destroyer of gay bobo bears. Larry fink sucks mumu's dick for a living. Some say mumu has a cock bigger than the BTC weekly candle. pump that knitta</p>
+        </div><!-- IMAGE -->
+        <div class="col-lg-6 my-5 my-lg-0 p-lg-5 text-center">
+          <div class="block-8-scr__img-container position-relative"><img class="block-8-scr__img" src="gmi.png"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------------------------------>
+  <!-- LEFT FEATURE ---------------->
+  <!------------------------------>
+  <div class="block-8-scr space-between-blocks">
+    <div class="container position-relative">
+      <div class="row px-2 align-items-center flex-column-reverse flex-lg-row">
+        <!-- IMAGE -->
+        <div class="col-lg-6 my-5 my-lg-0 p-lg-5 text-center">
+          <div class="block-8-scr__img-container position-relative"><img class="block-8-scr__img" src="killing.png"></div>
+        </div><!-- CONTENT -->
+        <div class="col-lg-6 position-relative mt-4 mt-lg-0">
+          <h1 class="block__title mb-3">Literally stop being poor.</h1>
+          <p class="block__paragraph block__paragraph--big mb-0">Mumu kills gay bears for a living and you're not all in?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------------------------------>
+  <!-- RIGHT FEATUR ---------------->
+  <!------------------------------>
+  <div class="block-8-scr space-between-blocks" style="background: #00FF00">
+    <div class="container position-relative">
+      <div class="row px-2 align-items-center flex-column-reverse flex-lg-row">
+        <!-- CONTENT -->
+        <div class="col-lg-6 position-relative mt-4 mt-lg-0">
+          <h1 class="block__title mb-3">$MUMU rewards diamond hands.</h1>
+          <p class="block__paragraph block__paragraph--big mb-5"> Price go up. You make money. Mumu make it that simple.</p>
+        </div><!-- IMAGE -->
+        <div class="col-lg-6 my-5 my-lg-0 p-lg-5 text-center">
+          <div class="block-8-scr__img-container position-relative"><img class="block-8-scr__img" src="diamons.jpeg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-39 space-between-blocks">
+    <div class="container">
+      <!-- HEADER -->
+      <div class="block__header col-lg-8 col-xl-7 mx-auto text-center mb-5">
+        <h1 class="block__title">MUMU Tokenomics</h1>
+      </div>
+      <div class="row px-2">
+        <div class="col-lg-6">
+          <div class="content-block">
+            <h4 class="content-block__title">Fair launched</h4>
+            <p class="content-block__paragraph">Mumu launch on solana for all bullas. </p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="content-block">
+            <h4 class="content-block__title">0% Tax</h4>
+            <p class="content-block__paragraph">Mumu doesn't fuck with gay bears who tax. </p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="content-block">
+            <h4 class="content-block__title">Liquidity Burned</h4>
+            <p class="content-block__paragraph">Mumu need liq to moon. Mumu liq never leave.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="content-block">
+            <h4 class="content-block__title">Selling = Gay</h4>
+            <p class="content-block__paragraph">Gay bears will be punished on the Mumu Moon Mission.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------------------------------>
+  <!-- CTA ---------------->
+  <!------------------------------>
+  <div class="block-32 space-between-blocks">
+    <div class="container">
+      <div class="col-lg-8 col-xl-7 mx-auto text-center mb-4">
+        <h1 class="block__title">Gay bears not allowed.</h1>
+      </div>
+      <div class="text-center mt-1"><a href="#!" class="btn btn-primary">Buy Now</a></div>
+    </div>
+  </div>
+  <script>
+    function submitForm(t) {
+      t.preventDefault();
+      var n = t.target.querySelector("button");
+      if (n.classList.contains("btn--loading")) return !1;
+      n.classList.add("btn--loading");
+      try {
+        setTimeout(function() {
+          n.classList.remove("btn--loading")
+        }, 2e3)
+      } catch (t) {
+        console.log(t), n.classList.remove("btn--loading")
+      }
+    }
+  </script>
+  <!------------------------------>
+  <!-- FOOTER ---------------->
+  <!------------------------------>
+  <div class="block-44 py-5">
+
+
+    <div class="container">
+      <div class="row flex-column flex-md-row px-2 justify-content-center">
+        <div class="flex-grow-1">
+          <ul class="block-44__extra-links d-flex list-unstyled p-0">
+            <li class="mx-2"><a href="#!" class="block-44__link m-0"><i class="fab fa-twitter"></i></a></li>
+            <li class="mx-2"><a href="#!" class="block-44__link m-0"><i class="fab fa-telegram"></i></a></li>
+            <li class="mx-2"><a href="#!" class="block-44__link m-0"><i class="fas fa-envelope"></i></a></li>
+          </ul>
+        </div>
+        <p class="block-44__copyrights">© 2024 MUMU. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div><!-- Put the blocks HTML here -->
+</body>
+
+</html>
